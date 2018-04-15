@@ -57,6 +57,25 @@ operator a string value can be passed to the server and then transformed into
 a mongo ObjectID instance.
 
 
+# Methods
+
+The module provides a method to transform query objects and a method to transform
+an aggregate pipe.
+
+## transformQuery(query)
+
+The transformQuery() method is used to apply the stringTo transforms on a single
+mongodb query object. This method returns a promise that resolves to a new query
+object where the transform operators have been converted into the designated objects.
+
+
+## transformAggregatePipe(pipe)
+
+An aggregate array can also use the transform operators by passing the array to the
+transformAggregatePipe() method. The method returns a promise that resolves to a
+new array with the transformed operators in place.
+
+
 # Implementation
 
 Transforms should be processed on the server where the request is received prior
@@ -64,12 +83,12 @@ to passing an aggregate pipe to the mongo aggregate method.
 
 ```javascript
 
-const transform = require('mongo-stringto');
+const MongoStringTo = require('mongo-stringto');
 
 // method to run aggregate pipe on the provided mongoose model for a mongodb collection
 function runAggregate(model, pipe) {
   // transform the pipe
-  transform(pipe)
+  MongoStringTo.transformAggregatePipe(pipe)
   .then(transformedPipe => {
     // use the transformed pipe in an aggregate request
     model.aggregate(transformedPipe).exec((error, result) => {
