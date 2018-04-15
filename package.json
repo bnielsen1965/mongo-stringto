@@ -1,0 +1,56 @@
+{
+  "name": "mongo-stringto",
+  "version": "1.0.0",
+  "description": "Provides transform functions that convert string values into specific objects for mongodb queries.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run lint && npm run coverage && nsp check",
+    "lint": "semistandard --fix",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts"
+  },
+  "author": {
+    "name": "Bryan Nielsen",
+    "email": "bnielsen1965@gmail.com",
+    "url": "https://github.com/bnielsen1965"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "transform",
+    "query",
+    "aggregate",
+    "pipe",
+    "string",
+    "stringto",
+    "date",
+    "objectid"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.1",
+    "nsp": "^3.2.1",
+    "semistandard": "^12.0.0"
+  },
+  "semistandard": {
+    "env": [
+      "mocha"
+    ],
+    "globals": [],
+    "ignore": [
+      "/test/*"
+    ]
+  },
+  "dependencies": {
+    "mongodb": "^3.0.6"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnielsen1965/mongo-stringto.git"
+  }
+}
