@@ -1,6 +1,6 @@
 {
   "name": "mongo-stringto",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides transform functions that convert string values into specific objects for mongodb queries.",
   "main": "lib/index.js",
   "scripts": {
